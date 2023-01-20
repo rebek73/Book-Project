@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class CustomConfig {
 
-    private static Logger logger = LoggerFactory.getLogger(CustomConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomConfig.class);
 
     @Bean
     @Scope("request")

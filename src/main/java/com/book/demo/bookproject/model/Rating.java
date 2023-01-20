@@ -8,8 +8,8 @@ public enum Rating {
     FOUR("\u2B50"+"\u2B50"+"\u2B50"),
     FIVE("\u2B50"+"\u2B50"+"\u2B50"+"\u2B50"+"\u2B50");
 
-    private String icon;
-    private Rating(String icon){
+    private final String icon;
+    Rating(String icon){
         this.icon=icon;
     }
 

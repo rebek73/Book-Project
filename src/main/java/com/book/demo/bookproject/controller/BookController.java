@@ -1,7 +1,7 @@
 package com.book.demo.bookproject.controller;
 
 import com.book.demo.bookproject.model.Book;
-import com.book.demo.bookproject.service.BookService;
+import com.book.demo.bookproject.service.PaymentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/v1")
 public class BookController {
 
     @Autowired
-    BookService bookService;
+    PaymentService paymentService;
 
-    private HashMap<Integer, Book> bookHashMap = new HashMap<>();
-    private static Logger logger = LoggerFactory.getLogger(BookController.class);
+    private final HashMap<Integer, Book> bookHashMap = new HashMap<>();
+    private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 
     //insertBook - POST - requestBody
     //updateBook - PUT - requestBody
@@ -44,6 +44,7 @@ public class BookController {
     @PutMapping("updateBook")
     public Book updateBook(@RequestBody Book book){
         bookHashMap.put(book.getBookID(), book);
+        logger.info(bookHashMap.values() + " was updated!!");
         return bookHashMap.get(book.getBookID());
     }
 
