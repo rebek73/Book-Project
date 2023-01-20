@@ -107,4 +107,6 @@ http://localhost:8080/v1/books
 
 http://localhost:8080/v1/updateBook
 
-<H
+<h5>DELETE - deleteBook</h5>
+
+http://localhost:8080/v1/deleteBook/1
